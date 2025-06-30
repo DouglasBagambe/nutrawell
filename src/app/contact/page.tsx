@@ -251,7 +251,7 @@ const ContactPage = () => {
             </h2>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7536223157963!2d32.5821!3d0.3476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjAnNTEuNCJOIDMywrAzNCc1NS42IkU!5e0!3m2!1sen!2sug!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d249.3495027763866!2d30.666334733955456!3d-0.6102141769695296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shappy%20sips%20%20mbarara!5e0!3m2!1sen!2sug!4v1751287382816!5m2!1sen!2sug"
                 width="100%"
                 height="500"
                 style={{ border: 0 }}
@@ -261,7 +261,7 @@ const ContactPage = () => {
                 className="absolute inset-0"
               />
               <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                Visit Us in Kampala
+                Visit Us in Mbarara
               </div>
             </div>
           </div>
