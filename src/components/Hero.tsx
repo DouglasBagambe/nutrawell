@@ -2,56 +2,60 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.75;
-    }
-  }, []);
-
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
+      {/* Image Background with Parallax Effect */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="https://picsum.photos/1920/1080?random=8"
+          alt="Ugandan Landscape with Nutrition Imagery"
           className="absolute min-h-full min-w-full object-cover"
-        >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40" />
+        />
+        <div className="absolute inset-0 bg-green-900/50" />
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex items-center justify-center text-center px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+      <div className="relative h-full flex items-center justify-center text-center px-4 z-10">
+        <div className="max-w-5xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg"
+          >
             Pure Nutrition from Uganda
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-delay">
-            Experience the natural goodness of Nutrawell Organics and Happy Sips
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+            className="text-xl md:text-3xl text-white/90 mb-10 max-w-3xl mx-auto drop-shadow"
+          >
+            Discover the unmatched quality of Nutrawell Organics and the vibrant
+            flavors of Happy Sips
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-6 justify-center"
+          >
             <Link
               href="/products"
-              className="bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition-colors"
+              className="bg-green-600 text-white px-10 py-4 rounded-full text-xl font-semibold hover:bg-green-700 transition-transform transform hover:scale-105 shadow-lg"
             >
               Explore Products
             </Link>
             <Link
               href="/about"
-              className="bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/20 transition-colors"
+              className="bg-white/20 backdrop-blur-sm text-white px-10 py-4 rounded-full text-xl font-semibold hover:bg-white/30 transition-transform transform hover:scale-105 shadow-lg"
             >
               Our Story
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
 

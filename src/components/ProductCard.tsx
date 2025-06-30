@@ -11,6 +11,7 @@ interface ProductCardProps {
   image: string;
   category: string;
   price: string;
+  slug?: string;
   isNew?: boolean;
 }
 
@@ -21,6 +22,7 @@ const ProductCard = ({
   image,
   category,
   price,
+  slug,
   isNew = false,
 }: ProductCardProps) => {
   return (
@@ -28,7 +30,7 @@ const ProductCard = ({
       whileHover={{ y: -5 }}
       className="group relative bg-white rounded-xl shadow-md overflow-hidden"
     >
-      <Link href={`/products/${id}`}>
+      <Link href={slug ? `/happy-sips/products/${slug}` : `/products/${id}`}>
         <div className="relative h-64 w-full overflow-hidden">
           <Image
             src={image}

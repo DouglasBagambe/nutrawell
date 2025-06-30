@@ -11,6 +11,7 @@ interface Product {
   image: string;
   category: string;
   price: string;
+  slug?: string;
   isNew?: boolean;
 }
 
@@ -37,7 +38,7 @@ const ProductGrid = ({
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
@@ -46,10 +47,10 @@ const ProductGrid = ({
               {subtitle}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => setSelectedCategory("all")}
             className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
@@ -73,7 +74,7 @@ const ProductGrid = ({
               {category}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Product Grid */}
         <motion.div
